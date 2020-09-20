@@ -9,7 +9,7 @@ load = data[1]
     
 
 
-################ Load vs Elongation ################
+## Load vs Elongation
 # aes takes the results of names(dataframe) but not in string
 elongation = data[2] - original_length
 names(elongation) = "dGap"
@@ -22,7 +22,7 @@ load_elong_graph = ggplot(data=load_elong_data, aes( y=Load , x=dGap)) +
     labs(title = "Load vs Elongation")
 load_elong_graph
 
-################ Stress vs Strain ################
+## Stress vs Strain
 stress = load / crossSectionalArea / 1000000 # Load / cross_sectional_area in MPa
 strain = elongation / original_length #dLen/OrgLen
 stress_strain_data = data.frame(stress, strain)
@@ -36,7 +36,7 @@ stress_strain_graph = ggplot(data=stress_strain_data, aes( x=strain , y=stress))
     coord_cartesian(xlim = c(0, 0.005)) #Question C
 stress_strain_graph
 
-################ Young's Modulus ################
+## Young's Modulus
 slopes = stress / strain
 slopes[is.na(slopes)] = 0
 young_mod_data = data.frame(slopes)
@@ -47,15 +47,12 @@ young_mod_data$diff = c(young_mod_data$slopes[1:len-1] - young_mod_data$slopes[2
 index = which.max(young_mod_data$diff) 
 young_mod = stress[index,1] / strain[index,1]
 
+## Print material properties
 cat("Young's Modulud: ", young_mod)
-
-################ Yeild Strength ################
 cat("Yeild Strength: ", stress[index,])
-
-################ Tensile Strength ################
 cat("Tensile Strenth: ", max(stress))
 
-################ Percent Elongation at Failure ################
+## Percent Elongation at Failure
 # TODO this returns a list, I took a shortcut
 percent_elongation = elongation[nrow(elongation),] / original_length * 100
 cat("Percent Elongation at Failure: ", max(percent_elongation), "\b%")
