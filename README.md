@@ -1,2 +1,2 @@
 # Small Projects
-Small, but usefull programs I wrote.
+Small miscellaneous programs.
