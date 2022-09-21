@@ -2,10 +2,10 @@
 Small miscellaneous programs I wrote for various purposes.
 
 ## Files
-- `Lab1-Electric_Field.jl`: Lab report written as a Julia/Pluto notebook[^1] for my ECE106 Electromagnetism course. ([Here is a preview](https://omar-elrefaei.github.io/lab1-Electric_Field.jl.html))
-- `material-science.r`: An R script to extract and plot material properties (such as Yield/Tensile strengths and Young's modulus) from Stress-Strain data obtained from a material science laboratory.
+- `Electric_Field.jl`: A lab report written as a Julia notebook[^1] for my electromagnetism course. ([Preview](https://omar-elrefaei.github.io/lab1-Electric_Field.jl.html))
+- `material-science.r`: An R script to extract and plot material properties (such as Tensile strength and Young's modulus) from the laboratory obtained stress-strain data.
 
 
 
 
-[^1]: similar to a Jupyter notebooks
+[^1]: [Pluto](https://github.com/fonsp/Pluto.jl) is an extremely good alternative to Jupyter notebooks for the [Julia](https://julialang.org/) language
